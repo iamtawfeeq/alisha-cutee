@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>For Alisha ♡ | A Moonlit Sanctuary</title>
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Great+Vibes&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Floating Falling Petals Canvas -->
+  <canvas id="petals-canvas"></canvas>
+
+  <!-- Envelope Opening Overlay Modal -->
+  <div class="welcome-overlay" id="welcomeOverlay">
+    <div class="stars-bg"></div>
+    <div class="envelope-card">
+      <div class="envelope-glow"></div>
+      <div class="moon-badge">☾</div>
+      <div class="bismillah-text">بِسْمِ اللهِ الرَّحْمٰنِ الرَّحِيْمِ</div>
+      <h1 class="welcome-title">For Alisha ♡</h1>
+      <p class="welcome-subtitle">A special little surprise crafted under the moonlit sky...</p>
+
+      <div class="letter-preview" id="letterPreview">
+        <div class="wax-seal" id="waxSeal">♡</div>
+        <p class="envelope-hint">Click the seal to open your letter</p>
+      </div>
+
+      <div class="revealed-compliment hidden" id="complimentSection">
+        <div class="heart-pulse">💌</div>
+        <h2 class="compliment-text">Alisha, you are truly beautiful. ♡</h2>
+        <p class="compliment-sub">May your days be as serene and radiant as the moonlight.</p>
+        <button class="btn-enter" onclick="enterWebsite()">
+          <span>Enter Sanctuary</span>
+          <span class="arrow">→</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Website Content -->
+  <div class="main-wrapper" id="mainWebsite">
+
+    <!-- Top Navigation Bar -->
+    <header class="navbar">
+      <div class="nav-container">
+        <a href="#home" class="nav-logo">
+          <span class="moon-icon">☾</span>
+          <span class="logo-text">Alisha ♡</span>
+        </a>
+        <nav class="nav-links">
+          <a href="#home">Home</a>
+          <a href="#shayari">Shayari</a>
+          <a href="#reminders">Reminders</a>
+          <a href="#gallery">Gallery</a>
+          <a href="#blessing">Blessings</a>
+        </nav>
+        <div class="nav-bismillah">بِسْمِ اللهِ الرَّحْمٰنِ الرَّحِيْمِ</div>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section" id="home">
+      <div class="hero-container">
+
+        <!-- Left Column: Interactive Portrait -->
+        <div class="hero-portrait-wrapper">
+          <div class="portrait-arch" onclick="openLightbox('assets/alisha-portrait.jpg', 'Alisha — Moonlit Serenity')">
+            <div class="lantern-light"></div>
+            <img src="assets/alisha-portrait.jpg" alt="Alisha in moonlight with pink roses" class="hero-img" id="heroPortraitImg" onerror="this.onerror=null; this.src='assets/alisha-portrait.png';">
+            <div class="arch-overlay">
+              <span class="zoom-badge">🔍 Click to enlarge photo</span>
+            </div>
+            <div class="glow-border"></div>
+          </div>
+          <div class="portrait-caption">
+            <span class="sparkle">✦</span>
+            <span>A gentle soul illuminated under starlight</span>
+            <span class="sparkle">✦</span>
+          </div>
+        </div>
+
+        <!-- Right Column: Welcome & Ayat -->
+        <div class="hero-content">
+          <div class="greeting-tag">☾ Hello, beautiful soul</div>
+          <h1 class="hero-title">For Alisha ♡</h1>
+          <p class="hero-quote">
+            "And He is with you wherever you are."
+            <span class="ayah-ref">— Qur'an 57:4</span>
+          </p>
+
+          <div class="divider-stars">
+            <span>✦</span>
+            <div class="line"></div>
+            <span>☾</span>
+            <div class="line"></div>
+            <span>✦</span>
+          </div>
+
+          <p class="hero-desc">
+            Welcome to your tranquil sanctuary. Whenever you feel tired or need a gentle smile, come here to be reminded of peace, warmth, and grace.
+          </p>
+
+          <!-- Featured Islamic Card -->
+          <div class="featured-card">
+            <div class="card-crescent">☾</div>
+            <div class="featured-info">
+              <span class="card-label">Gentle Reminder</span>
+              <p class="card-quote">"Indeed, with hardship comes ease."</p>
+              <span class="card-ref">— Qur'an 94:6</span>
+            </div>
+          </div>
+
+          <div class="hero-actions">
+            <a href="#shayari" class="btn-primary">Explore Shayari ↓</a>
+            <a href="#gallery" class="btn-secondary">View Gallery ✿</a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Urdu Shayari Section -->
+    <section class="section shayari-section" id="shayari">
+      <div class="container">
+        <div class="section-header">
+          <span class="badge">نظم و غزل</span>
+          <h2>Urdu Shayari ♡</h2>
+          <p>Handpicked couplets echoing elegance, sweetness, and admiration</p>
+        </div>
+
+        <div class="shayari-carousel-card">
+          <button class="carousel-btn prev-btn" onclick="prevPoem()" aria-label="Previous Poem">❮</button>
+
+          <div class="poetry-container">
+            <div class="arabic-decor">❀ ─── ☾ ─── ❀</div>
+            <h3 class="poem-arabic" id="poemUrdu" dir="rtl">تم مسکراؤ تو موسم بھی خوبصورت لگتا ہے</h3>
+            <p class="poem-trans" id="poemTrans">"When you smile, even the seasons seem beautiful."</p>
+            <div class="poem-author" id="poemAuthor">— Dedicated to Alisha ♡</div>
+          </div>
+
+          <button class="carousel-btn next-btn" onclick="nextPoem()" aria-label="Next Poem">❯</button>
+        </div>
+
+        <div class="shayari-actions">
+          <button class="btn-copy" onclick="copyCurrentPoem()">
+            <span id="copyIcon">⧉</span>
+            <span id="copyText">Copy Shayari</span>
+          </button>
+          <div class="carousel-dots" id="carouselDots"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Islamic Reminders Section -->
+    <section class="section reminders-section" id="reminders">
+      <div class="container">
+        <div class="section-header">
+          <span class="badge">آیات قرآنیہ</span>
+          <h2>Beautiful Islamic Reminders ☾</h2>
+          <p>Timeless verses to bring peace, reassurance, and serenity to your heart</p>
+        </div>
+
+        <div class="cards-grid">
+          
+          <div class="mihrab-card">
+            <div class="card-top-arch"></div>
+            <div class="card-body">
+              <div class="arabic-icon">☾</div>
+              <h3 class="quran-arabic">فَإِنَّ مَعَ الْعُسْرِ يُسْرًا</h3>
+              <p class="quran-english">"For indeed, with hardship [will be] ease."</p>
+              <span class="quran-ref">Surah Ash-Sharh • 94:5</span>
+            </div>
+          </div>
+
+          <div class="mihrab-card featured-glow">
+            <div class="card-top-arch"></div>
+            <div class="card-body">
+              <div class="arabic-icon">♡</div>
+              <h3 class="quran-arabic">أَلَا بِذِكْرِ اللَّهِ تَطْمَئِنُّ الْقُلُوبُ</h3>
+              <p class="quran-english">"Verily, in the remembrance of Allah do hearts find rest."</p>
+              <span class="quran-ref">Surah Ar-Ra'd • 13:28</span>
+            </div>
+          </div>
+
+          <div class="mihrab-card">
+            <div class="card-top-arch"></div>
+            <div class="card-body">
+              <div class="arabic-icon">✦</div>
+              <h3 class="quran-arabic">إِنَّ اللَّهَ مَعَ الصَّابِرِينَ</h3>
+              <p class="quran-english">"Indeed, Allah is with those who patiently persevere."</p>
+              <span class="quran-ref">Surah Al-Baqarah • 2:153</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Photo Gallery Section -->
+    <section class="section gallery-section" id="gallery">
+      <div class="container">
+        <div class="section-header">
+          <span class="badge">نگارخانہ</span>
+          <h2>A Little Gallery ♡</h2>
+          <p>Moments of beauty captured under the moonlit sky. Click any photo to see it in full size.</p>
+        </div>
+
+        <div class="polaroid-grid">
+          
+          <div class="polaroid-item" onclick="openLightbox('assets/alisha-portrait.jpg', 'Alisha — Serenity in Moonlight ♡')">
+            <div class="polaroid-frame">
+              <img src="assets/alisha-portrait.jpg" alt="Alisha Portrait" class="polaroid-img" onerror="this.onerror=null; this.src='assets/alisha-portrait.png';">
+              <div class="polaroid-label">
+                <span>Alisha ♡</span>
+                <span class="heart-tag">♥</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="polaroid-item rotate-right" onclick="openLightbox('assets/roses.jpg', 'Pink Roses under Starlight ✿')">
+            <div class="polaroid-frame">
+              <img src="assets/roses.jpg" alt="Blooming Pink Roses" class="polaroid-img">
+              <div class="polaroid-label">
+                <span>Blooming Roses ✿</span>
+                <span class="heart-tag">♥</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="polaroid-item rotate-left" onclick="openLightbox('assets/mosque.jpg', 'Golden Minarets & Night Sky ☾')">
+            <div class="polaroid-frame">
+              <img src="assets/mosque.jpg" alt="Moonlit Mosque" class="polaroid-img">
+              <div class="polaroid-label">
+                <span>Peaceful Mosque ☾</span>
+                <span class="heart-tag">♥</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Dua & Ameen Section -->
+    <section class="section dua-section" id="blessing">
+      <div class="container">
+        <div class="dua-card">
+          <div class="lantern-icon">🏮</div>
+          <h2>May Allah Always Protect & Bless You ♡</h2>
+          <p class="dua-text">
+            "May Allah shower your life with unending happiness, guide your steps, grant you peace in your heart, protect you from all harm, and fulfill your purest dreams."
+          </p>
+
+          <button class="btn-ameen" id="ameenBtn" onclick="sendAmeen()">
+            <span>Send Ameen</span>
+            <span class="btn-heart">♡</span>
+          </button>
+
+          <div class="ameen-status" id="ameenStatus">
+            <span id="ameenCount">0</span> prayers whispered to the skies ☾
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      <div class="container footer-content">
+        <div class="footer-brand">
+          <span class="moon">☾</span>
+          <h3>Crafted with Kindness for Alisha ♡</h3>
+          <p>May Allah keep you happy, safe, and always smiling.</p>
+        </div>
+        <a href="#home" class="back-to-top">Back to Top ↑</a>
+      </div>
+    </footer>
+
+  </div>
+
+  <!-- Fullscreen Lightbox Modal -->
+  <div class="lightbox" id="lightboxModal" onclick="closeLightbox(event)">
+    <div class="lightbox-content" onclick="event.stopPropagation()">
+      <button class="lightbox-close" onclick="closeLightbox()" aria-label="Close Lightbox">✕</button>
+      <img id="lightboxImg" src="" alt="Enlarged view">
+      <div class="lightbox-caption" id="lightboxCaption"></div>
+    </div>
+  </div>
+
+  <!-- Copy Toast Notification -->
+  <div class="toast-notify" id="toastNotify">Copied to clipboard! ♡</div>
+
+  <!-- Scripts -->
+  <script src="script.js"></script>
+</body>
+</html>
